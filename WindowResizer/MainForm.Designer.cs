@@ -1,5 +1,5 @@
 ﻿namespace WindowResizer {
-    partial class Form1 {
+    partial class MainForm {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -33,6 +33,7 @@
             this.heightNud = new System.Windows.Forms.NumericUpDown();
             this.origWidth = new System.Windows.Forms.Label();
             this.origHeight = new System.Windows.Forms.Label();
+            this.showAll = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.widthNud)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.heightNud)).BeginInit();
@@ -44,7 +45,7 @@
             this.treeView.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.treeView.Location = new System.Drawing.Point(3, 3);
             this.treeView.Name = "treeView";
-            this.tableLayoutPanel1.SetRowSpan(this.treeView, 5);
+            this.tableLayoutPanel1.SetRowSpan(this.treeView, 6);
             this.treeView.Size = new System.Drawing.Size(338, 393);
             this.treeView.TabIndex = 0;
             this.treeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView_AfterSelect);
@@ -102,7 +103,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel1.Controls.Add(this.treeView, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.refreshButton, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.refreshButton, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.label2, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.label1, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.widthNud, 3, 0);
@@ -110,13 +111,15 @@
             this.tableLayoutPanel1.Controls.Add(this.origWidth, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.origHeight, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.resizeButton, 3, 2);
+            this.tableLayoutPanel1.Controls.Add(this.showAll, 1, 4);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 5;
+            this.tableLayoutPanel1.RowCount = 6;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 247F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
@@ -139,7 +142,7 @@
             0,
             0});
             this.widthNud.Name = "widthNud";
-            this.widthNud.Size = new System.Drawing.Size(202, 25);
+            this.widthNud.Size = new System.Drawing.Size(202, 22);
             this.widthNud.TabIndex = 7;
             this.widthNud.Value = new decimal(new int[] {
             128,
@@ -162,7 +165,7 @@
             0,
             0});
             this.heightNud.Name = "heightNud";
-            this.heightNud.Size = new System.Drawing.Size(202, 25);
+            this.heightNud.Size = new System.Drawing.Size(202, 22);
             this.heightNud.TabIndex = 8;
             this.heightNud.Value = new decimal(new int[] {
             128,
@@ -194,14 +197,26 @@
             this.origHeight.Text = "height";
             this.origHeight.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // Form1
+            // showAll
+            // 
+            this.showAll.AutoSize = true;
+            this.tableLayoutPanel1.SetColumnSpan(this.showAll, 3);
+            this.showAll.Location = new System.Drawing.Point(347, 342);
+            this.showAll.Name = "showAll";
+            this.showAll.Size = new System.Drawing.Size(224, 18);
+            this.showAll.TabIndex = 11;
+            this.showAll.Text = "Show all processes and windows";
+            this.showAll.UseVisualStyleBackColor = true;
+            this.showAll.CheckedChanged += new System.EventHandler(this.showAll_CheckedChanged);
+            // 
+            // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(688, 399);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.MinimumSize = new System.Drawing.Size(600, 192);
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.ShowIcon = false;
             this.Text = "Window Resizer";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -225,6 +240,7 @@
         private System.Windows.Forms.NumericUpDown heightNud;
         private System.Windows.Forms.Label origWidth;
         private System.Windows.Forms.Label origHeight;
+        private System.Windows.Forms.CheckBox showAll;
     }
 }
 

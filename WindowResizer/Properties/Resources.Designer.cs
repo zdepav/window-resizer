@@ -73,6 +73,16 @@ namespace WindowResizer.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_hidden_window {
+            get {
+                object obj = ResourceManager.GetObject("icon_hidden_window", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_none {
             get {
                 object obj = ResourceManager.GetObject("icon_none", resourceCulture);
