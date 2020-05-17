@@ -27,16 +27,36 @@ namespace WindowResizer {
         public static extern uint GetWindowThreadProcessId(IntPtr hWnd, out uint lpdwProcessId);
 
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
-        public static extern int GetWindowTextLength(HandleRef hWnd);
+        public static extern int GetWindowTextLength(IntPtr hWnd);
 
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
-        public static extern int GetWindowText(HandleRef hWnd, StringBuilder lpString, int nMaxCount);
+        public static extern int GetWindowText(
+            IntPtr hWnd,
+            StringBuilder lpString,
+            int nMaxCount
+        );
 
         [DllImport("user32.dll")]
         [return: MarshalAs(UnmanagedType.Bool)]
-        public static extern bool GetWindowRect(HandleRef hWnd, out RECT lpRect);
+        public static extern bool GetWindowRect(IntPtr hWnd, out RECT lpRect);
 
         [DllImport("user32.dll", SetLastError = true)]
-        public static extern bool MoveWindow(IntPtr hWnd, int X, int Y, int nWidth, int nHeight, bool bRepaint);
+        public static extern bool MoveWindow(
+            IntPtr hWnd,
+            int X,
+            int Y,
+            int nWidth,
+            int nHeight,
+            bool bRepaint
+        );
+
+        [DllImport("user32.dll")]
+        public static extern IntPtr GetDesktopWindow();
+
+        [DllImport("user32.dll")]
+        public static extern IntPtr GetWindowDC(IntPtr hWnd);
+
+        [DllImport("user32.dll")]
+        public static extern IntPtr ReleaseDC(IntPtr hWnd, IntPtr hDC);
     }
 }
